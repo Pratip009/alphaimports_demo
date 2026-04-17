@@ -12,6 +12,76 @@ function Badge({ children, variant = "default" }) {
   return <span className={`${base} ${variants[variant]}`}>{children}</span>;
 }
 
+function SkeletonBlock({ className }) {
+  return (
+    <div
+      className={className}
+      style={{
+        borderRadius: "4px",
+        background: "linear-gradient(90deg, #1a1a1e 25%, #242428 50%, #1a1a1e 75%)",
+        backgroundSize: "800px 100%",
+        animation: "shimmer 1.8s infinite",
+      }}
+    />
+  );
+}
+
+export function ProductCardSkeleton() {
+  return (
+    <article className="bg-[#111114] border border-[#2a2a30] rounded-[14px] overflow-hidden">
+
+      {/* Image area */}
+      <div className="relative h-40 bg-[#1a1a1e]">
+        <SkeletonBlock className="w-full h-full" style={{ borderRadius: 0 }} />
+        {/* Badge placeholders */}
+        <div className="absolute top-2.5 left-2.5">
+          <SkeletonBlock className="w-16 h-4" />
+        </div>
+        <div className="absolute top-2.5 right-2.5">
+          <SkeletonBlock className="w-12 h-4" />
+        </div>
+      </div>
+
+      {/* Body */}
+      <div className="px-3.5 pt-3 pb-3.5 space-y-2.5">
+
+        {/* Name + ID */}
+        <div className="space-y-1.5">
+          <SkeletonBlock className="w-4/5 h-[15px]" />
+          <SkeletonBlock className="w-10 h-[10px]" />
+        </div>
+
+        {/* Specs 2×2 grid */}
+        <div className="grid grid-cols-2 gap-x-2.5 gap-y-1.5">
+          {[0, 1, 2, 3].map((i) => (
+            <div key={i} className="space-y-1">
+              <SkeletonBlock className="w-8 h-[9px]" />
+              <SkeletonBlock className="w-12 h-[12px]" />
+            </div>
+          ))}
+        </div>
+
+        {/* Divider */}
+        <div className="h-px mx-[-14px] bg-[#1e1e24]" />
+
+        {/* Price + CTA */}
+        <div className="flex items-center justify-between">
+          <SkeletonBlock className="w-20 h-[19px]" />
+          <SkeletonBlock className="w-12 h-[26px]" />
+        </div>
+
+      </div>
+
+      <style>{`
+        @keyframes shimmer {
+          0%   { background-position: -800px 0; }
+          100% { background-position:  800px 0; }
+        }
+      `}</style>
+    </article>
+  );
+}
+
 export default function ProductCard({ diamond }) {
   const [imgError, setImgError] = useState(false);
   const isPremium = CLARITY_RANK[diamond.clarity] >= 4 && ["D", "E"].includes(diamond.color);
@@ -19,7 +89,7 @@ export default function ProductCard({ diamond }) {
   return (
     <article className="bg-[#111114] border border-[#2a2a30] rounded-[14px] overflow-hidden group hover:border-champagne/30 transition-all duration-300 hover:-translate-y-0.5">
 
-      {/* Image — fixed height, tighter than before */}
+      {/* Image */}
       <div className="relative h-40 overflow-hidden bg-[#1a1a1e]">
         {!imgError ? (
           <img
@@ -35,7 +105,6 @@ export default function ProductCard({ diamond }) {
           </div>
         )}
 
-        {/* Bottom fade */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#111114cc] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
         {isPremium && (
