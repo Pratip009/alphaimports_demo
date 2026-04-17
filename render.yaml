@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: diamond-api
+    env: node
+    region: oregon
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 4000
+      - key: FRONTEND_URL
+        sync: false   # Set manually in Render dashboard to your Vercel URL
