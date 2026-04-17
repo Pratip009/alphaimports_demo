@@ -19,7 +19,8 @@ const SORT_OPTIONS = [
 
 function SecLabel({ children }) {
   return (
-    <p className="text-[9px] font-sans font-medium tracking-[0.18em] uppercase text-champagne opacity-75 mb-2.5">
+    <p className="text-[9px] font-sans font-semibold tracking-[0.18em] uppercase mb-2.5"
+       style={{ color: "#c9a96e" }}>
       {children}
     </p>
   );
@@ -27,7 +28,7 @@ function SecLabel({ children }) {
 
 function Section({ children }) {
   return (
-    <div className="py-3.5 border-b border-[#1c1c22] last:border-0 last:pb-0 first:pt-0">
+    <div className="py-3.5 border-b border-[#2a2a34] last:border-0 last:pb-0 first:pt-0">
       {children}
     </div>
   );
@@ -41,15 +42,15 @@ function RangeRow({ minKey, maxKey, placeholders, filters, setFilter }) {
         placeholder={placeholders[0]}
         value={filters[minKey]}
         onChange={(e) => setFilter(minKey, e.target.value)}
-        className="w-full bg-[#18181c] border border-[#2a2a32] rounded-[7px] px-2.5 py-[7px] text-[12px] text-[#c8c8cc] placeholder-[#38383f] focus:outline-none focus:border-champagne/30 transition-colors [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none"
+        className="w-full bg-[#0e0e12] border border-[#36363f] rounded-[7px] px-2.5 py-[7px] text-[12px] text-[#e8e8ea] placeholder-[#4a4a54] focus:outline-none focus:border-[#c9a96e]/50 transition-colors [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none"
       />
-      <span className="text-[10px] text-[#38383f] flex-shrink-0">—</span>
+      <span className="text-[11px] flex-shrink-0" style={{ color: "#4a4a54" }}>—</span>
       <input
         type="number"
         placeholder={placeholders[1]}
         value={filters[maxKey]}
         onChange={(e) => setFilter(maxKey, e.target.value)}
-        className="w-full bg-[#18181c] border border-[#2a2a32] rounded-[7px] px-2.5 py-[7px] text-[12px] text-[#c8c8cc] placeholder-[#38383f] focus:outline-none focus:border-champagne/30 transition-colors [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none"
+        className="w-full bg-[#0e0e12] border border-[#36363f] rounded-[7px] px-2.5 py-[7px] text-[12px] text-[#e8e8ea] placeholder-[#4a4a54] focus:outline-none focus:border-[#c9a96e]/50 transition-colors [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none"
       />
     </div>
   );
@@ -61,16 +62,16 @@ function Pills({ items, activeItems, onToggle, single = false, ruby = false }) {
       {items.map((item) => {
         const isActive = single ? activeItems === item : activeItems.includes(item);
         const activeClass = ruby
-          ? "text-[#e05c5c] border-[#e05c5c] bg-[#e05c5c]/[0.07]"
-          : "text-champagne border-champagne bg-champagne/[0.07]";
+          ? "text-[#f07070] border-[#e05c5c] bg-[#e05c5c]/[0.10]"
+          : "text-[#e2b97a] border-[#c9a96e] bg-[#c9a96e]/[0.10]";
         return (
           <button
             key={item}
             onClick={() => onToggle(item)}
-            className={`text-[10px] font-sans font-normal tracking-[0.06em] border rounded-[5px] px-[9px] py-1 leading-none transition-all duration-150 ${
+            className={`text-[10px] font-sans font-medium tracking-[0.06em] border rounded-[5px] px-[9px] py-1 leading-none transition-all duration-150 ${
               isActive
                 ? activeClass
-                : "text-[#666670] border-[#252530] hover:text-[#c8c8cc] hover:border-[#3a3a42]"
+                : "text-[#909098] border-[#2e2e38] hover:text-[#d8d8dc] hover:border-[#4a4a54]"
             }`}
           >
             {item}
@@ -95,17 +96,26 @@ export default function FilterPanel({
 
   return (
     <aside className="w-full lg:w-60 xl:w-[240px] flex-shrink-0">
-      <div className="bg-[#111114] border border-[#222228] rounded-2xl px-5 py-5 sticky top-24 flex flex-col gap-0">
+      <div
+        className="rounded-2xl px-5 py-5 sticky top-24 flex flex-col gap-0"
+        style={{
+          background: "#111114",
+          border: "1px solid #2e2e38",
+          boxShadow: "0 2px 12px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.4)",
+        }}
+      >
 
         {/* ── Header ── */}
-        <div className="flex items-center justify-between pb-3.5 border-b border-[#1c1c22]">
-          <h2 className="font-serif text-[18px] font-normal text-[#e8e8ea] tracking-[0.04em]">
+        <div className="flex items-center justify-between pb-3.5 border-b border-[#2a2a34]">
+          <h2 className="font-serif text-[18px] font-normal tracking-[0.04em]"
+              style={{ color: "#f0f0f2" }}>
             Refine
           </h2>
           {activeFilterCount > 0 && (
             <button
               onClick={resetFilters}
-              className="text-[10px] font-sans tracking-[0.1em] uppercase text-champagne opacity-70 hover:opacity-100 transition-opacity"
+              className="text-[10px] font-sans font-medium tracking-[0.1em] uppercase transition-opacity hover:opacity-100"
+              style={{ color: "#c9a96e", opacity: 0.9 }}
             >
               Clear all
             </button>
@@ -120,17 +130,17 @@ export default function FilterPanel({
               const isActive = filters.stone === s;
               const activeClass =
                 s === "Ruby"
-                  ? "text-[#e05c5c] border-[#e05c5c] bg-[#e05c5c]/[0.07]"
-                  : "text-champagne border-champagne bg-champagne/[0.07]";
+                  ? { color: "#f07070", border: "1px solid #e05c5c", background: "rgba(224,92,92,0.10)" }
+                  : { color: "#e2b97a", border: "1px solid #c9a96e", background: "rgba(201,169,110,0.10)" };
+              const inactiveStyle = { color: "#909098", border: "1px solid #2e2e38" };
               return (
                 <button
                   key={s}
                   onClick={() => setFilter("stone", s)}
-                  className={`flex-1 text-[10px] font-sans tracking-[0.08em] border rounded-[5px] py-1.5 leading-none transition-all duration-150 ${
-                    isActive
-                      ? activeClass
-                      : "text-[#666670] border-[#252530] hover:text-[#c8c8cc] hover:border-[#3a3a42]"
-                  }`}
+                  className="flex-1 text-[10px] font-sans font-medium tracking-[0.08em] rounded-[5px] py-1.5 leading-none transition-all duration-150"
+                  style={isActive ? activeClass : inactiveStyle}
+                  onMouseEnter={(e) => { if (!isActive) { e.currentTarget.style.color = "#d8d8dc"; e.currentTarget.style.borderColor = "#4a4a54"; }}}
+                  onMouseLeave={(e) => { if (!isActive) { e.currentTarget.style.color = "#909098"; e.currentTarget.style.borderColor = "#2e2e38"; }}}
                 >
                   {s}
                 </button>
@@ -146,17 +156,19 @@ export default function FilterPanel({
             <select
               value={filters.sortBy}
               onChange={(e) => setFilter("sortBy", e.target.value)}
-              className="w-full appearance-none bg-[#18181c] border border-[#2a2a32] rounded-[7px] px-2.5 py-2 text-[12px] text-[#c8c8cc] focus:outline-none focus:border-champagne/30 transition-colors cursor-pointer pr-7"
+              className="w-full appearance-none bg-[#0e0e12] border border-[#36363f] rounded-[7px] px-2.5 py-2 text-[12px] text-[#e8e8ea] focus:outline-none focus:border-[#c9a96e]/50 transition-colors cursor-pointer pr-7"
             >
               {SORT_OPTIONS.map((o) => (
-                <option key={o.value} value={o.value}>{o.label}</option>
+                <option key={o.value} value={o.value} style={{ background: "#111114", color: "#e8e8ea" }}>
+                  {o.label}
+                </option>
               ))}
             </select>
             <svg
               className="absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none"
               width="10" height="6" viewBox="0 0 10 6" fill="none"
             >
-              <path d="M1 1L5 5L9 1" stroke="#555560" strokeWidth="1.2" strokeLinecap="round" />
+              <path d="M1 1L5 5L9 1" stroke="#c9a96e" strokeWidth="1.2" strokeLinecap="round" />
             </svg>
           </div>
         </Section>
@@ -209,7 +221,7 @@ export default function FilterPanel({
           />
         </Section>
 
-        {/* ── Color — swaps based on stone ── */}
+        {/* ── Color ── */}
         <Section>
           <SecLabel>Color Grade</SecLabel>
           <Pills
@@ -218,7 +230,7 @@ export default function FilterPanel({
             ruby={isRuby}
             onToggle={(c) => toggleMultiSelect("color", c)}
           />
-          <p className="text-[9px] text-[#3e3e48] mt-1.5 tracking-[0.04em]">
+          <p className="text-[9px] mt-1.5 tracking-[0.04em]" style={{ color: "#585864" }}>
             {isRuby
               ? "Vivid Red — most prized · Deep Red — rich tone"
               : "D — Colorless \u00a0·\u00a0 H — Near Colorless"}
@@ -234,7 +246,7 @@ export default function FilterPanel({
             ruby={isRuby}
             onToggle={(c) => toggleMultiSelect("clarity", c)}
           />
-          <p className="text-[9px] text-[#3e3e48] mt-1.5 tracking-[0.04em]">
+          <p className="text-[9px] mt-1.5 tracking-[0.04em]" style={{ color: "#585864" }}>
             IF — Internally Flawless &nbsp;·&nbsp; VS2 — Very Slight
           </p>
         </Section>

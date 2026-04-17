@@ -54,7 +54,7 @@ const diamonds = [
     cut: "Very Good",
      stone: "Diamond",
     image:
-      "https://images.unsplash.com/photo-1573408301185-9519f94815d4?w=400&q=80",
+      "https://images.unsplash.com/photo-1645201233154-80125533a32c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "D005",
@@ -110,7 +110,7 @@ const diamonds = [
     cut: "Excellent",
      stone: "Diamond",
     image:
-      "https://images.unsplash.com/photo-1573408301185-9519f94815d4?w=400&q=80",
+      "https://images.unsplash.com/photo-1645201233154-80125533a32c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "D009",
@@ -166,7 +166,7 @@ const diamonds = [
     cut: "Ideal",
      stone: "Diamond",
     image:
-      "https://images.unsplash.com/photo-1573408301185-9519f94815d4?w=400&q=80",
+      "https://images.unsplash.com/photo-1645201233154-80125533a32c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "D013",
@@ -222,7 +222,7 @@ const diamonds = [
     cut: "Very Good",
      stone: "Diamond",
     image:
-      "https://images.unsplash.com/photo-1573408301185-9519f94815d4?w=400&q=80",
+      "https://images.unsplash.com/photo-1645201233154-80125533a32c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "D017",
@@ -278,7 +278,7 @@ const diamonds = [
     cut: "Ideal",
      stone: "Diamond",
     image:
-      "https://images.unsplash.com/photo-1573408301185-9519f94815d4?w=400&q=80",
+      "https://images.unsplash.com/photo-1645201233154-80125533a32c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "D021",
@@ -334,7 +334,7 @@ const diamonds = [
     cut: "Good",
      stone: "Diamond",
     image:
-      "https://images.unsplash.com/photo-1573408301185-9519f94815d4?w=400&q=80",
+      "https://images.unsplash.com/photo-1645201233154-80125533a32c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "D025",
@@ -390,7 +390,7 @@ const diamonds = [
     cut: "Excellent",
      stone: "Diamond",
     image:
-      "https://images.unsplash.com/photo-1573408301185-9519f94815d4?w=400&q=80",
+      "https://images.unsplash.com/photo-1645201233154-80125533a32c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "D029",
@@ -446,7 +446,7 @@ const diamonds = [
     cut: "Ideal",
      stone: "Diamond",
     image:
-      "https://images.unsplash.com/photo-1573408301185-9519f94815d4?w=400&q=80",
+      "https://images.unsplash.com/photo-1645201233154-80125533a32c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "D033",
@@ -488,7 +488,7 @@ const diamonds = [
     cut: "Ideal",
     stone: "Diamond",
     image:
-      "https://images.unsplash.com/photo-1573408301185-9519f94815d4?w=400&q=80",
+      "https://images.unsplash.com/photo-1645201233154-80125533a32c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   // Add these to the array in diamonds.js
 {

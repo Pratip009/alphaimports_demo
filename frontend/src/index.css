@@ -11,15 +11,15 @@
   }
 
   body {
-    background-color: #0d0d0f;
-    color: #e8e8ea;
+    background-color: #f5f1ea;   /* warm ivory parchment */
+    color: #1c1712;              /* deep warm near-black */
     font-family: "DM Sans", sans-serif;
     min-height: 100vh;
   }
 
   ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: #0d0d0f; }
-  ::-webkit-scrollbar-thumb { background: #43434a; border-radius: 2px; }
+  ::-webkit-scrollbar-track { background: #ede8df; }
+  ::-webkit-scrollbar-thumb { background: #c9a96e; border-radius: 2px; }
 }
 
 @layer components {
@@ -27,9 +27,9 @@
   .skeleton {
     background: linear-gradient(
       90deg,
-      #1e1e23 25%,
-      #2e2e34 50%,
-      #1e1e23 75%
+      #ede8df 25%,
+      #e0d8cc 50%,
+      #ede8df 75%
     );
     background-size: 800px 100%;
     animation: shimmer 1.8s infinite;
@@ -38,24 +38,24 @@
   /* ── Gold divider ─────────────────────────────────────────── */
   .gold-line {
     height: 1px;
-    background: linear-gradient(90deg, transparent, #c9a96e, transparent);
+    background: linear-gradient(90deg, transparent, #a07840, transparent);
   }
 
   /* ── Filter pill ──────────────────────────────────────────── */
   .filter-pill {
     @apply px-3 py-1 text-xs font-sans font-medium rounded-full border transition-all duration-200 cursor-pointer select-none;
-    border-color: #2e2e34;
-    color: #9898a0;
+    border-color: #d4c9b5;
+    color: #7a6a52;
   }
-  .filter-pill:hover  { border-color: #c9a96e; color: #c9a96e; }
-  .filter-pill.active { border-color: #c9a96e; color: #c9a96e; background-color: rgba(201,169,110,0.08); }
+  .filter-pill:hover  { border-color: #a07840; color: #7a5520; }
+  .filter-pill.active { border-color: #a07840; color: #7a5520; background-color: rgba(160,120,64,0.10); }
 
   /* ── Range input ──────────────────────────────────────────── */
   input[type="range"] {
     -webkit-appearance: none;
     width: 100%;
     height: 2px;
-    background: #2e2e34;
+    background: #d4c9b5;
     border-radius: 1px;
     outline: none;
   }
@@ -64,17 +64,17 @@
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: #c9a96e;
+    background: #a07840;
     cursor: pointer;
-    border: 2px solid #0d0d0f;
-    box-shadow: 0 0 0 2px #c9a96e40;
+    border: 2px solid #f5f1ea;
+    box-shadow: 0 0 0 2px #a0784040;
   }
 }
 
 @layer utilities {
-  .text-champagne { color: #c9a96e; }
-  .border-champagne { border-color: #c9a96e; }
-  .bg-card { background-color: #141418; }
-  .bg-surface { background-color: #1e1e23; }
-  .bg-elevated { background-color: #2e2e34; }
+  .text-champagne   { color: #a07840; }          /* richer, darker gold on light bg */
+  .border-champagne { border-color: #a07840; }
+  .bg-card          { background-color: #fdfaf5; } /* creamy white card */
+  .bg-surface       { background-color: #f0ebe0; } /* warm mid-tone surface */
+  .bg-elevated      { background-color: #e6dfd1; } /* slightly deeper lift */
 }
